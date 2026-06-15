@@ -63,6 +63,11 @@ def main():
             else:
                 st.info("Initiating Multi-Ring evaluation pipeline...")
                 passed_r1, msg_r1 = programmatic_pre_filter(user_input)
+                if not passed_r1:
+                    st.error(f"🛑 **Blocked by Ring 1 (Heuristic Pre-Filter):** {msg_r1}")
+                else:
+                    st.success(f"🟢 **Passed Ring 1:** {msg_r1}")
+                    st.info("Form validation complete. Ready to route payload through security rings.")
 
     with col_audit:
         st.subheader("Cryptographic Audit Log")
