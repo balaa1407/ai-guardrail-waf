@@ -1,0 +1,20 @@
+# Python virtual env
+venv/
+.venv/
+env/
+bin/
+lib/
+include/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
