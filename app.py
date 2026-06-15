@@ -14,3 +14,5 @@ st.markdown("Intercepts, evaluates, and sanitizes LLM-generated text before it h
 st.sidebar.header("Security Configuration")
 api_key = st.sidebar.text_input("Gemini API Key", type="password")
 model_select = st.sidebar.selectbox("Model Version", ["gemini-2.5-flash"])
+
+col_main, col_audit = st.columns([2, 1])
