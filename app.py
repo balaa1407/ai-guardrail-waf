@@ -1,6 +1,14 @@
 import streamlit as st
 import os
 import json
+import re
+
+injection_patterns = [
+    r"(?i)ignore\s+previous", 
+    r"(?i)system\s+override", 
+    r"(?i)developer\s+mode",
+    r"(?i)bypass\s+filter"
+]
 
 st.set_page_config(
     page_title="Enterprise AI Guardrail & WAF",
