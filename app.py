@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import json
 import re
+import math
 
 injection_patterns = [
     r"(?i)ignore\s+previous", 
@@ -9,6 +10,16 @@ injection_patterns = [
     r"(?i)developer\s+mode",
     r"(?i)bypass\s+filter"
 ]
+
+def calculate_entropy(text):
+    if not text:
+        return 0.0
+    entropy = 0.0
+    for x in range(256):
+        p_x = float(text.count(chr(x))) / len(text)
+        if p_x > 0:
+            entropy += - p_x * math.log(p_x, 2)
+    return entropy
 
 def programmatic_pre_filter(text):
     for pattern in injection_patterns:
