@@ -16,3 +16,7 @@ api_key = st.sidebar.text_input("Gemini API Key", type="password")
 model_select = st.sidebar.selectbox("Model Version", ["gemini-2.5-flash"])
 
 col_main, col_audit = st.columns([2, 1])
+
+with col_main:
+    st.subheader("Simulate Incoming Payload")
+    user_input = st.text_area("Paste draft marketing copy or prompt injection attack here:", height=150)
