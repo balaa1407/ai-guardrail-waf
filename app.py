@@ -10,3 +10,7 @@ st.set_page_config(
 
 st.title("🛡️ AI Web Application Firewall (WAF)")
 st.markdown("Intercepts, evaluates, and sanitizes LLM-generated text before it hits production.")
+
+st.sidebar.header("Security Configuration")
+api_key = st.sidebar.text_input("Gemini API Key", type="password")
+model_select = st.sidebar.selectbox("Model Version", ["gemini-2.5-flash"])
