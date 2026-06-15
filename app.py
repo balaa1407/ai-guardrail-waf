@@ -25,6 +25,12 @@ def programmatic_pre_filter(text):
     for pattern in injection_patterns:
         if re.search(pattern, text):
             return False, "Heuristic Match: Unauthorized system override attempt detected."
+            
+    if len(text) > 30:
+        entropy_score = calculate_entropy(text)
+        if entropy_score > 5.2:
+            return False, f"Anomaly Detection: High-entropy content ({entropy_score:.2f}) suspected of base64 obfuscation."
+            
     return True, "Passed Ring 1 heuristic checks."
 
 st.set_page_config(
