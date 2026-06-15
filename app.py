@@ -20,3 +20,17 @@ col_main, col_audit = st.columns([2, 1])
 with col_main:
     st.subheader("Simulate Incoming Payload")
     user_input = st.text_area("Paste draft marketing copy or prompt injection attack here:", height=150)
+    
+    run_scan = st.button("Run Security Scan")
+    
+    if run_scan:
+        if not api_key:
+            st.warning("Please enter your Gemini API Key in the sidebar.")
+        elif not user_input:
+            st.warning("Please enter text to scan.")
+        else:
+            st.info("Form validation complete. Ready to route payload through security rings.")
+
+with col_audit:
+    st.subheader("Cryptographic Audit Log")
+    st.info("No audit logs available yet. Run a scan to see signed compliance records.")
