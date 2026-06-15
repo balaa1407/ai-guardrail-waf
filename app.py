@@ -10,6 +10,12 @@ injection_patterns = [
     r"(?i)bypass\s+filter"
 ]
 
+def programmatic_pre_filter(text):
+    for pattern in injection_patterns:
+        if re.search(pattern, text):
+            return False, "Heuristic Match: Unauthorized system override attempt detected."
+    return True, "Passed Ring 1 heuristic checks."
+
 st.set_page_config(
     page_title="Enterprise AI Guardrail & WAF",
     page_icon="🛡️",
