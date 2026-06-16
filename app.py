@@ -108,11 +108,22 @@ def calculate_entropy(text):
     return entropy
 
 def programmatic_pre_filter(text):
-    # Check for known prompt injection signatures
-    signatures = ["ignore previous", "system prompt", "bypass", "override", "you are now", "forget everything"]
-    for sig in signatures:
-        if sig in text.lower():
-            return False, f"Signature match: '{sig}'"
+    # 1. Normalize Leetspeak
+    leet_map = {'4': 'a', '@': 'a', '3': 'e', '1': 'i', '!': 'i', '0': 'o', '$': 's', '5': 's', '7': 't'}
+    normalized_text = "".join(leet_map.get(c, c) for c in text.lower())
+    
+    # 2. Advanced Regex Injection Signatures
+    patterns = [
+        r"ignore.*previous",
+        r"system.*prompt",
+        r"bypass",
+        r"override",
+        r"you are now",
+        r"forget.*everything"
+    ]
+    for pattern in patterns:
+        if re.search(pattern, text.lower()) or re.search(pattern, normalized_text):
+            return False, "Signature match: Prompt Injection / Leetspeak detected."
             
     # Check for Base64 / Hex (Long unbroken strings without spaces)
     if len(text.strip()) > 20 and " " not in text.strip():
