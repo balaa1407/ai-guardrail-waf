@@ -120,7 +120,21 @@ def main():
 
     with col_audit:
         st.subheader("Cryptographic Audit Log")
-        st.info("No audit logs available yet. Run a scan to see signed compliance records.")
+        if "audit_logs" not in st.session_state or not st.session_state.audit_logs:
+            st.info("No audit logs available yet. Run a scan to see signed compliance records.")
+        else:
+            for record in reversed(st.session_state.audit_logs):
+                log = record["log"]
+                sig = record["signature"]
+                
+                is_valid = verify_audit_signature(log, sig)
+                
+                with st.expander(f"{log['action']} - {log['timestamp'][:19]}"):
+                    if is_valid:
+                        st.success(f"Verified Signature: `{sig[:16]}...`")
+                    else:
+                        st.error("Signature Verification Failed! Log tampered.")
+                    st.json(log)
 
 if __name__ == "__main__":
     main()
