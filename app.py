@@ -41,6 +41,15 @@ def programmatic_pre_filter(text):
             
     return True, "Passed Ring 1 heuristic checks."
 
+# --- Ring 3: Cryptographic Audit ---
+SECRET_AUDIT_KEY = b"enterprise_waf_secret_key_2026"
+
+def generate_audit_signature(payload_dict):
+    """Generates an HMAC-SHA256 signature for a dictionary payload."""
+    payload_str = json.dumps(payload_dict, sort_keys=True)
+    signature = hmac.new(SECRET_AUDIT_KEY, payload_str.encode('utf-8'), hashlib.sha256).hexdigest()
+    return signature
+
 def main():
     # Set up page configuration
     st.set_page_config(
