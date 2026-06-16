@@ -55,6 +55,25 @@ def verify_audit_signature(payload_dict, signature):
     expected_signature = generate_audit_signature(payload_dict)
     return hmac.compare_digest(expected_signature, signature)
 
+def create_compliance_log(payload_text, action, reason):
+    """Creates a structured, signed JSON compliance report."""
+    log_entry = {
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "payload": payload_text,
+        "action": action,
+        "reason": reason
+    }
+    signature = generate_audit_signature(log_entry)
+    
+    if "audit_logs" not in st.session_state:
+        st.session_state.audit_logs = []
+        
+    st.session_state.audit_logs.append({
+        "log": log_entry,
+        "signature": signature
+    })
+    return log_entry, signature
+
 def main():
     # Set up page configuration
     st.set_page_config(
@@ -93,9 +112,11 @@ def main():
                 passed_r1, msg_r1 = programmatic_pre_filter(user_input)
                 if not passed_r1:
                     st.error(f"🛑 **Blocked by Ring 1 (Heuristic Pre-Filter):** {msg_r1}")
+                    create_compliance_log(user_input, "BLOCKED", f"Ring 1: {msg_r1}")
                 else:
                     st.success(f"🟢 **Passed Ring 1:** {msg_r1}")
                     st.info("Form validation complete. Ready to route payload through security rings.")
+                    create_compliance_log(user_input, "PASSED_R1", "Passed heuristic checks.")
 
     with col_audit:
         st.subheader("Cryptographic Audit Log")
