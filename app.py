@@ -7,6 +7,12 @@ import hmac
 import hashlib
 from datetime import datetime
 
+try:
+    from local_llm_judge import LocalGuardrailJudge
+except ImportError:
+    LocalGuardrailJudge = None
+
+
 # --- Ring 1: Heuristic Pre-Filters ---
 def calculate_entropy(text):
     if not text:
@@ -88,8 +94,11 @@ def main():
 
     # Sidebar Configuration
     st.sidebar.header("Security Configuration")
-    api_key = st.sidebar.text_input("Gemini API Key", type="password")
-    model_select = st.sidebar.selectbox("Model Version", ["gemini-2.5-flash"])
+    st.sidebar.info("Running in Local Edge Mode (No external API keys required).")
+    
+    if 'judge' not in st.session_state and LocalGuardrailJudge is not None:
+        with st.spinner("Loading AI Firewall into memory..."):
+            st.session_state.judge = LocalGuardrailJudge()
 
     # UI Layout with two main areas: Left for inputs/results, Right for logs
     col_main, col_audit = st.columns([2, 1])
@@ -103,9 +112,7 @@ def main():
         
         # Execution Logic
         if run_scan:
-            if not api_key:
-                st.warning("Please enter your Gemini API Key in the sidebar.")
-            elif not user_input:
+            if not user_input:
                 st.warning("Please enter text to scan.")
             else:
                 st.info("Initiating Multi-Ring evaluation pipeline...")
@@ -115,8 +122,20 @@ def main():
                     create_compliance_log(user_input, "BLOCKED", f"Ring 1: {msg_r1}")
                 else:
                     st.success(f"🟢 **Passed Ring 1:** {msg_r1}")
-                    st.info("Form validation complete. Ready to route payload through security rings.")
-                    create_compliance_log(user_input, "PASSED_R1", "Passed heuristic checks.")
+                    
+                    st.info("Initiating Ring 2: Local AI Judge...")
+                    if 'judge' in st.session_state:
+                        with st.spinner("Analyzing context..."):
+                            llm_result = st.session_state.judge.evaluate_payload(user_input)
+                            
+                        if llm_result["verdict"] == "BLOCK":
+                            st.error(f"🛑 **Blocked by Ring 2 (Local LLM):** {llm_result['reason']}")
+                            create_compliance_log(user_input, "BLOCKED", f"Ring 2 [{llm_result['violation_type']}]: {llm_result['reason']}")
+                        else:
+                            st.success(f"🟢 **Passed Ring 2:** {llm_result['reason']}")
+                            create_compliance_log(user_input, "PASSED", "Cleared local LLM contextual safety check.")
+                    else:
+                        st.error("Local LLM Judge failed to initialize.")
 
     with col_audit:
         st.subheader("Cryptographic Audit Log")
