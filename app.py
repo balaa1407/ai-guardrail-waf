@@ -12,6 +12,85 @@ try:
 except ImportError:
     LocalGuardrailJudge = None
 
+def inject_custom_css():
+    st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+    
+    html, body, [class*="css"] {
+        font-family: 'Outfit', sans-serif;
+    }
+    
+    /* Dark Theme Background */
+    .stApp {
+        background: radial-gradient(circle at top left, #1a1c23, #0d0e12);
+        color: #e2e8f0;
+    }
+    
+    /* Glassmorphism Sidebar */
+    [data-testid="stSidebar"] {
+        background: rgba(20, 22, 28, 0.6) !important;
+        backdrop-filter: blur(12px) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Buttons */
+    div.stButton > button {
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        transition: all 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    div.stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+        border: none;
+        color: white;
+    }
+    
+    /* Text Area */
+    .stTextArea textarea {
+        background: rgba(30, 34, 42, 0.6) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: white !important;
+        border-radius: 8px;
+    }
+    .stTextArea textarea:focus {
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.3) !important;
+    }
+    
+    /* Alerts Animation */
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .stAlert {
+        animation: slideIn 0.4s ease-out;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Headers Gradient */
+    h1, h2, h3 {
+        background: -webkit-linear-gradient(45deg, #60a5fa, #c084fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    /* Audit Log Container */
+    [data-testid="stExpander"] {
+        background: rgba(255, 255, 255, 0.02) !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 8px !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 
 # --- Ring 1: Heuristic Pre-Filters ---
 def calculate_entropy(text):
@@ -69,14 +148,8 @@ def create_compliance_log(payload_text, action, reason):
         "reason": reason
     }
     signature = generate_audit_signature(log_entry)
-    
     if 'audit_logs' not in st.session_state:
         st.session_state.audit_logs = []
-    if 'risk_score' not in st.session_state:
-        st.session_state.risk_score = 0
-    if 'session_locked' not in st.session_state:
-        st.session_state.session_locked = False
-        
     st.session_state.audit_logs.append({
         "log": log_entry,
         "signature": signature
@@ -90,6 +163,15 @@ def main():
         page_icon="🛡️",
         layout="wide"
     )
+    inject_custom_css()
+    
+    # Initialize State
+    if 'audit_logs' not in st.session_state:
+        st.session_state.audit_logs = []
+    if 'risk_score' not in st.session_state:
+        st.session_state.risk_score = 0
+    if 'session_locked' not in st.session_state:
+        st.session_state.session_locked = False
 
     # App Title & Subheader
     st.title("🛡️ AI Web Application Firewall (WAF)")
