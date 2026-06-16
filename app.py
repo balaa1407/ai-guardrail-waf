@@ -50,6 +50,11 @@ def generate_audit_signature(payload_dict):
     signature = hmac.new(SECRET_AUDIT_KEY, payload_str.encode('utf-8'), hashlib.sha256).hexdigest()
     return signature
 
+def verify_audit_signature(payload_dict, signature):
+    """Verifies the HMAC-SHA256 signature."""
+    expected_signature = generate_audit_signature(payload_dict)
+    return hmac.compare_digest(expected_signature, signature)
+
 def main():
     # Set up page configuration
     st.set_page_config(
