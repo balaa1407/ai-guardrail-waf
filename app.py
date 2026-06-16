@@ -29,22 +29,21 @@ def calculate_entropy(text):
     return entropy
 
 def programmatic_pre_filter(text):
-    injection_patterns = [
-        r"(?i)ignore\s+previous", 
-        r"(?i)system\s+override", 
-        r"(?i)developer\s+mode",
-        r"(?i)bypass\s+filter"
-    ]
+    # Check for known prompt injection signatures
+    signatures = ["ignore previous", "system prompt", "bypass", "override", "you are now", "forget everything"]
+    for sig in signatures:
+        if sig in text.lower():
+            return False, f"Signature match: '{sig}'"
+            
+    # Check for Base64 / Hex (Long unbroken strings without spaces)
+    if len(text.strip()) > 20 and " " not in text.strip():
+        return False, "Obfuscation detected: Unusually long unbroken string (Possible Base64/Hex)."
     
-    for pattern in injection_patterns:
-        if re.search(pattern, text):
-            return False, "Heuristic Match: Unauthorized system override attempt detected."
-            
-    if len(text) > 30:
-        entropy_score = calculate_entropy(text)
-        if entropy_score > 5.2:
-            return False, f"Anomaly Detection: High-entropy content ({entropy_score:.2f}) suspected of base64 obfuscation."
-            
+    # Check for high entropy (obfuscation)
+    ent = calculate_entropy(text)
+    if ent > 4.2:
+        return False, f"High entropy detected ({ent:.2f}). Possible obfuscation."
+    
     return True, "Passed Ring 1 heuristic checks."
 
 # --- Ring 3: Cryptographic Audit ---
@@ -71,8 +70,12 @@ def create_compliance_log(payload_text, action, reason):
     }
     signature = generate_audit_signature(log_entry)
     
-    if "audit_logs" not in st.session_state:
+    if 'audit_logs' not in st.session_state:
         st.session_state.audit_logs = []
+    if 'risk_score' not in st.session_state:
+        st.session_state.risk_score = 0
+    if 'session_locked' not in st.session_state:
+        st.session_state.session_locked = False
         
     st.session_state.audit_logs.append({
         "log": log_entry,
@@ -96,6 +99,13 @@ def main():
     st.sidebar.header("Security Configuration")
     st.sidebar.info("Running in Local Edge Mode (No external API keys required).")
     
+    st.sidebar.divider()
+    st.sidebar.subheader("Ring 3: Session Intelligence")
+    st.sidebar.progress(min(st.session_state.risk_score, 100) / 100.0)
+    st.sidebar.caption(f"Adversarial Threat Level: {st.session_state.risk_score}/100")
+    if st.session_state.session_locked:
+        st.sidebar.error("🚨 SESSION LOCKED OUT")
+    
     if 'judge' not in st.session_state and LocalGuardrailJudge is not None:
         with st.spinner("Loading AI Firewall into memory..."):
             st.session_state.judge = LocalGuardrailJudge()
@@ -112,13 +122,17 @@ def main():
         
         # Execution Logic
         if run_scan:
-            if not user_input:
+            if st.session_state.session_locked:
+                st.error("🚨 **Blocked by Ring 3 (Stateful Analyzer):** Session permanently locked due to repeated adversarial probing. Please contact security.")
+                create_compliance_log(user_input, "SESSION_LOCKOUT", "Ring 3 detected persistent adversarial probing. Session terminated.")
+            elif not user_input:
                 st.warning("Please enter text to scan.")
             else:
                 st.info("Initiating Multi-Ring evaluation pipeline...")
                 passed_r1, msg_r1 = programmatic_pre_filter(user_input)
                 if not passed_r1:
                     st.error(f"🛑 **Blocked by Ring 1 (Heuristic Pre-Filter):** {msg_r1}")
+                    st.session_state.risk_score += 40
                     create_compliance_log(user_input, "BLOCKED", f"Ring 1: {msg_r1}")
                 else:
                     st.success(f"🟢 **Passed Ring 1:** {msg_r1}")
@@ -130,12 +144,19 @@ def main():
                             
                         if llm_result["verdict"] == "BLOCK":
                             st.error(f"🛑 **Blocked by Ring 2 (Local LLM):** {llm_result['reason']}")
+                            st.session_state.risk_score += 35
                             create_compliance_log(user_input, "BLOCKED", f"Ring 2 [{llm_result['violation_type']}]: {llm_result['reason']}")
                         else:
                             st.success(f"🟢 **Passed Ring 2:** {llm_result['reason']}")
+                            st.session_state.risk_score = max(0, st.session_state.risk_score - 10)
                             create_compliance_log(user_input, "PASSED", "Cleared local LLM contextual safety check.")
                     else:
                         st.error("Local LLM Judge failed to initialize.")
+                        
+                if st.session_state.risk_score >= 100 and not st.session_state.session_locked:
+                    st.session_state.session_locked = True
+                    st.error("🚨 **Ring 3 Triggered:** Adversarial probing threshold exceeded. Locking session.")
+                    st.rerun()
 
     with col_audit:
         st.subheader("Cryptographic Audit Log")
