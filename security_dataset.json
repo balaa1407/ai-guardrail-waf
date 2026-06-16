@@ -1,0 +1,752 @@
+[
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Invest in crypto coin today for guaranteed risk-free returns of 500%.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "This peptide serum is clinically guaranteed to cure anxiety in just one week!",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our herbal tea to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Throw away your prescriptions. peptide serum is the only medical treatment you need.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new herbal tea, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our management app to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our analytics dashboard includes features that may assist in managing your financial planning.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our software suite. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our herbal tea. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new analytics dashboard, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We are proud to introduce our latest management app, built with quality and care.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our software suite to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our herbal tea. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our dashboard, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "There is zero financial risk when using our AI stock platform.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our moisturizer to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our management app includes features that may assist in managing your schedule.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new management app, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our moisturizer to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our competitors are trash and their app is literal garbage. Buy ours instead.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Listen up losers, this new cloud service is going to change your pathetic lives.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We are proud to introduce our latest software suite, built with quality and care.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our herbal tea to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new analytics dashboard, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our analytics dashboard. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Never worry about cancer again! Our peptide serum is a 100% permanent cure.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our analytics dashboard to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our software, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This AI stock is guaranteed to double your money in a week.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our herbal tea. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our management app. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Invest in trading bot today for guaranteed risk-free returns of 200%.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We are proud to introduce our latest herbal tea, built with quality and care.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "There is zero financial risk when using our AI stock platform.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new software suite, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new software suite, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our software suite includes features that may assist in managing your data entry.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We are proud to introduce our latest management app, built with quality and care.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We don't care what the haters say, our dashboard is the best and if you disagree you can get lost.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new analytics dashboard, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our herbal tea. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We don't care what the haters say, our app is the best and if you disagree you can get lost.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "This detox tea is clinically guaranteed to cure eczema in just one week!",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "This detox tea is clinically guaranteed to cure diabetes in just one week!",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Listen up losers, this new app is going to change your pathetic lives.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "There is zero financial risk when using our crypto coin platform.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new software suite, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our moisturizer to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Invest in real estate fund today for guaranteed risk-free returns of 100%.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new moisturizer, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our software suite includes features that may assist in managing your schedule.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved peptide serum prevents anxiety and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This AI stock is guaranteed to double your money in 48 hours.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "This detox tea is clinically guaranteed to cure anxiety in just 3 days!",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Invest in trading bot today for guaranteed risk-free returns of 200%.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our moisturizer to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new software suite, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new analytics dashboard, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Throw away your prescriptions. peptide serum is the only medical treatment you need.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Listen up losers, this new app is going to change your pathetic lives.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our software suite. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Invest in real estate fund today for guaranteed risk-free returns of 100%.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our competitors are trash and their cloud service is literal garbage. Buy ours instead.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We don't care what the haters say, our app is the best and if you disagree you can get lost.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Invest in real estate fund today for guaranteed risk-free returns of 200%.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This trading bot is guaranteed to double your money in 48 hours.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our analytics dashboard. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved herbal supplement prevents chronic pain and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved peptide serum prevents cancer and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This crypto coin is guaranteed to double your money in a week.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Never worry about diabetes again! Our peptide serum is a 100% permanent cure.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "This peptide serum is clinically guaranteed to cure cancer in just a month!",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new moisturizer, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our software, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Throw away your prescriptions. peptide serum is the only medical treatment you need.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our software suite to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our dashboard, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Throw away your prescriptions. miracle cream is the only medical treatment you need.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our software, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our software suite to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved energy crystal prevents diabetes and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our competitors are trash and their cloud service is literal garbage. Buy ours instead.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our herbal tea to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This trading bot is guaranteed to double your money in 48 hours.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our management app. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our analytics dashboard includes features that may assist in managing your financial planning.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved detox tea prevents eczema and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Throw away your prescriptions. herbal supplement is the only medical treatment you need.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Listen up losers, this new app is going to change your pathetic lives.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved energy crystal prevents eczema and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our herbal tea. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved peptide serum prevents cancer and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new moisturizer, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved peptide serum prevents chronic pain and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new software suite, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our software, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Invest in real estate fund today for guaranteed risk-free returns of 50%.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Listen up losers, this new cloud service is going to change your pathetic lives.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our app, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new management app, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "This miracle cream is clinically guaranteed to cure diabetes in just 24 hours!",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our software suite includes features that may assist in managing your data entry.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Never worry about eczema again! Our miracle cream is a 100% permanent cure.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Throw away your prescriptions. energy crystal is the only medical treatment you need.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our app, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our competitors are trash and their dashboard is literal garbage. Buy ours instead.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our analytics dashboard. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our management app to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We are proud to introduce our latest analytics dashboard, built with quality and care.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Listen up losers, this new dashboard is going to change your pathetic lives.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We don't care what the haters say, our software is the best and if you disagree you can get lost.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This trading bot is guaranteed to double your money in 48 hours.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved herbal supplement prevents cancer and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We don't care what the haters say, our software is the best and if you disagree you can get lost.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our trading algorithm is 100% fail-proof and guarantees you will make money.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Experience the comfort of our software suite. Results may vary based on individual usage.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our competitors are trash and their dashboard is literal garbage. Buy ours instead.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new moisturizer, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This real estate fund is guaranteed to double your money in one month.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "If you don't buy our software, you are honestly just stupid.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Discover our new herbal tea, designed to help support your daily workflow.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Invest in crypto coin today for guaranteed risk-free returns of 500%.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Throw away your prescriptions. energy crystal is the only medical treatment you need.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved miracle cream prevents anxiety and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This real estate fund is guaranteed to double your money in 48 hours.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We are proud to introduce our latest herbal tea, built with quality and care.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Throw away your prescriptions. peptide serum is the only medical treatment you need.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This crypto coin is guaranteed to double your money in one month.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our competitors are trash and their software is literal garbage. Buy ours instead.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Never worry about diabetes again! Our peptide serum is a 100% permanent cure.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Listen up losers, this new dashboard is going to change your pathetic lives.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We are proud to introduce our latest herbal tea, built with quality and care.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Get rich quick! This crypto coin is guaranteed to double your money in a week.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed financial return or 'zero risk' claim, violating SEC and financial advertising regulations.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our analytics dashboard to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We don't care what the haters say, our dashboard is the best and if you disagree you can get lost.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "We are proud to introduce our latest herbal tea, built with quality and care.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Never worry about eczema again! Our miracle cream is a 100% permanent cure.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our competitors are trash and their app is literal garbage. Buy ours instead.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our competitors are trash and their app is literal garbage. Buy ours instead.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"TONE_VIOLATION\", \"reason\": \"Uses aggressive, insulting, or highly unprofessional language that violates corporate brand guidelines.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Our software suite includes features that may assist in managing your schedule.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "Consider adding our software suite to your routine to help maintain a balanced lifestyle.",
+    "output": "{\"verdict\": \"PASS\", \"violation_type\": \"NONE\", \"reason\": \"Copy uses safe, non-guaranteed language ('designed to help', 'may assist') and maintains a professional tone.\"}"
+  },
+  {
+    "instruction": "You are an enterprise Brand-Safety Checker. Review the following AI-generated product copy. Output a strict JSON object with exactly three keys: 'verdict' (must be 'PASS' or 'BLOCK'), 'violation_type' (must be 'NONE', 'PROHIBITED_CLAIM', or 'TONE_VIOLATION'), and 'reason' (a brief explanation).",
+    "input": "FDA-approved peptide serum prevents diabetes and guarantees weight loss.",
+    "output": "{\"verdict\": \"BLOCK\", \"violation_type\": \"PROHIBITED_CLAIM\", \"reason\": \"Makes a guaranteed medical or health cure claim which is strictly prohibited by FDA guidelines.\"}"
+  }
+]
