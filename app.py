@@ -3,6 +3,9 @@ import os
 import json
 import re
 import math
+import hmac
+import hashlib
+from datetime import datetime
 
 # --- Ring 1: Heuristic Pre-Filters ---
 def calculate_entropy(text):
