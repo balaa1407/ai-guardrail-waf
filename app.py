@@ -17,78 +17,217 @@ from honeypot import SandboxHoneypot
 def inject_custom_css():
     st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     
+    /* === GLOBAL === */
     html, body, [class*="css"] {
-        font-family: 'Outfit', sans-serif;
+        font-family: 'Inter', sans-serif;
     }
     
-    /* Dark Theme Background */
     .stApp {
-        background: radial-gradient(circle at top left, #1a1c23, #0d0e12);
-        color: #e2e8f0;
+        background: linear-gradient(135deg, #0a0b0f 0%, #111318 40%, #0d1117 100%);
+        color: #c9d1d9;
     }
     
-    /* Glassmorphism Sidebar */
+    /* === SIDEBAR === */
     [data-testid="stSidebar"] {
-        background: rgba(20, 22, 28, 0.6) !important;
-        backdrop-filter: blur(12px) !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        background: linear-gradient(180deg, rgba(13,17,23,0.95) 0%, rgba(22,27,34,0.95) 100%) !important;
+        backdrop-filter: blur(20px) !important;
+        border-right: 1px solid rgba(48,54,61,0.6) !important;
+    }
+    [data-testid="stSidebar"] .stMarkdown p,
+    [data-testid="stSidebar"] .stMarkdown span {
+        color: #8b949e !important;
     }
     
-    /* Buttons */
+    /* === HEADINGS === */
+    h1 {
+        background: linear-gradient(135deg, #58a6ff 0%, #bc8cff 50%, #f778ba 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.5px !important;
+    }
+    h2, h3 {
+        background: linear-gradient(90deg, #79c0ff, #d2a8ff) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        font-weight: 700 !important;
+    }
+    
+    /* === GLOW BUTTON === */
     div.stButton > button {
-        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        transition: all 0.3s ease;
-        font-weight: 600;
-        letter-spacing: 0.5px;
+        background: linear-gradient(135deg, #238636 0%, #2ea043 100%) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(46,160,67,0.4) !important;
+        border-radius: 10px !important;
+        padding: 0.65rem 1.5rem !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+        letter-spacing: 0.3px !important;
+        box-shadow: 0 0 20px rgba(46,160,67,0.15), 0 4px 12px rgba(0,0,0,0.3) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        width: 100% !important;
     }
     div.stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
-        border: none;
-        color: white;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 0 30px rgba(46,160,67,0.3), 0 8px 24px rgba(0,0,0,0.4) !important;
+        background: linear-gradient(135deg, #2ea043 0%, #3fb950 100%) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(46,160,67,0.6) !important;
+    }
+    div.stButton > button:active {
+        transform: translateY(0px) !important;
     }
     
-    /* Text Area */
+    /* === TEXT AREA === */
     .stTextArea textarea {
-        background: rgba(30, 34, 42, 0.6) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        color: white !important;
-        border-radius: 8px;
+        background: rgba(13,17,23,0.8) !important;
+        border: 1px solid rgba(48,54,61,0.8) !important;
+        color: #c9d1d9 !important;
+        border-radius: 12px !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.92rem !important;
+        padding: 14px !important;
+        transition: all 0.3s ease !important;
     }
     .stTextArea textarea:focus {
-        border-color: #3b82f6 !important;
-        box-shadow: 0 0 10px rgba(59, 130, 246, 0.3) !important;
+        border-color: #58a6ff !important;
+        box-shadow: 0 0 0 3px rgba(88,166,255,0.15), 0 0 20px rgba(88,166,255,0.1) !important;
+    }
+    .stTextArea label {
+        color: #8b949e !important;
+        font-weight: 500 !important;
     }
     
-    /* Alerts Animation */
-    @keyframes slideIn {
-        from { opacity: 0; transform: translateY(10px); }
+    /* === ALERTS === */
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(16px); }
         to { opacity: 1; transform: translateY(0); }
     }
     .stAlert {
-        animation: slideIn 0.4s ease-out;
-        border-radius: 8px;
-        border: 1px solid rgba(255,255,255,0.1);
+        animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        border-radius: 10px !important;
+        backdrop-filter: blur(8px) !important;
     }
     
-    /* Headers Gradient */
-    h1, h2, h3 {
-        background: -webkit-linear-gradient(45deg, #60a5fa, #c084fc);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    
-    /* Audit Log Container */
+    /* === EXPANDERS === */
     [data-testid="stExpander"] {
-        background: rgba(255, 255, 255, 0.02) !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
-        border-radius: 8px !important;
+        background: rgba(22,27,34,0.6) !important;
+        border: 1px solid rgba(48,54,61,0.5) !important;
+        border-radius: 12px !important;
+        backdrop-filter: blur(10px) !important;
+        transition: all 0.3s ease !important;
+    }
+    [data-testid="stExpander"]:hover {
+        border-color: rgba(88,166,255,0.3) !important;
+    }
+    
+    /* === PROGRESS BAR === */
+    .stProgress > div > div {
+        border-radius: 6px !important;
+    }
+    
+    /* === DIVIDER === */
+    hr {
+        border-color: rgba(48,54,61,0.5) !important;
+    }
+    
+    /* === COLUMNS GAP === */
+    [data-testid="stHorizontalBlock"] {
+        gap: 1.5rem !important;
+    }
+
+    /* === METRICS === */
+    [data-testid="stMetric"] {
+        background: rgba(22,27,34,0.5) !important;
+        border: 1px solid rgba(48,54,61,0.4) !important;
+        border-radius: 12px !important;
+        padding: 16px !important;
+    }
+    [data-testid="stMetricValue"] {
+        color: #58a6ff !important;
+    }
+
+    /* === SCROLLBAR === */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(88,166,255,0.2); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(88,166,255,0.4); }
+    
+    </style>
+    """, unsafe_allow_html=True)
+
+
+def render_status_card(label, value, color, icon):
+    st.markdown(f"""
+    <div style="
+        background: linear-gradient(135deg, rgba(22,27,34,0.7), rgba(30,36,44,0.5));
+        border: 1px solid {color}33;
+        border-radius: 14px;
+        padding: 20px;
+        text-align: center;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 25px {color}10, 0 4px 16px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    ">
+        <div style="font-size: 28px; margin-bottom: 6px;">{icon}</div>
+        <div style="font-size: 13px; color: #8b949e; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;">{label}</div>
+        <div style="font-size: 26px; font-weight: 800; color: {color}; margin-top: 4px;">{value}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+def render_ring_badge(ring_name, status, detail, color):
+    bg = f"{color}12"
+    border = f"{color}40"
+    st.markdown(f"""
+    <div style="
+        background: {bg};
+        border-left: 4px solid {color};
+        border-radius: 0 10px 10px 0;
+        padding: 14px 18px;
+        margin-bottom: 10px;
+        backdrop-filter: blur(8px);
+        animation: slideUp 0.4s ease-out;
+    ">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 700; color: {color}; font-size: 0.95rem;">{ring_name}</span>
+            <span style="
+                background: {color}22;
+                color: {color};
+                padding: 3px 12px;
+                border-radius: 20px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                border: 1px solid {border};
+            ">{status}</span>
+        </div>
+        <div style="color: #8b949e; font-size: 0.85rem; margin-top: 6px;">{detail}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+def render_sandbox_alert():
+    st.markdown("""
+    <div style="
+        background: linear-gradient(135deg, rgba(248,81,73,0.08), rgba(210,50,45,0.04));
+        border: 1px solid rgba(248,81,73,0.3);
+        border-radius: 14px;
+        padding: 24px;
+        text-align: center;
+        animation: pulse 2s infinite;
+        box-shadow: 0 0 40px rgba(248,81,73,0.08);
+    ">
+        <div style="font-size: 36px; margin-bottom: 8px;">🕳️</div>
+        <div style="font-size: 18px; font-weight: 800; color: #f85149; letter-spacing: 1px;">SCHR&Ouml;DINGER'S SANDBOX</div>
+        <div style="font-size: 13px; color: #f8514990; margin-top: 6px; font-weight: 500;">Target is trapped in honeypot simulation</div>
+        <div style="font-size: 11px; color: #484f58; margin-top: 10px;">All inputs are being silently recorded for forensic analysis</div>
+    </div>
+    <style>
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 20px rgba(248,81,73,0.05); }
+        50% { box-shadow: 0 0 40px rgba(248,81,73,0.15); }
     }
     </style>
     """, unsafe_allow_html=True)
@@ -141,7 +280,7 @@ def programmatic_pre_filter(text):
     
     return True, "Passed Ring 1 heuristic checks."
 
-# --- Ring 3: Cryptographic Audit ---
+# --- Ring 4: Cryptographic Audit ---
 SECRET_AUDIT_KEY = b"enterprise_waf_secret_key_2026"
 
 def generate_audit_signature(payload_dict):
@@ -183,11 +322,11 @@ def log_to_sandbox(text, response):
     })
 
 def main():
-    # Set up page configuration
     st.set_page_config(
-        page_title="Enterprise AI Guardrail & WAF",
+        page_title="Enterprise AI-WAF",
         page_icon="🛡️",
-        layout="wide"
+        layout="wide",
+        initial_sidebar_state="expanded"
     )
     inject_custom_css()
     
@@ -202,77 +341,202 @@ def main():
         st.session_state.sandbox_logs = []
     if 'honeypot' not in st.session_state:
         st.session_state.honeypot = SandboxHoneypot()
+    if 'scan_count' not in st.session_state:
+        st.session_state.scan_count = 0
+    if 'blocked_count' not in st.session_state:
+        st.session_state.blocked_count = 0
 
-    # App Title & Subheader
-    st.title("🛡️ AI Web Application Firewall (WAF)")
-    st.markdown("Intercepts, evaluates, and sanitizes LLM-generated text before it hits production.")
-
-    # Sidebar Configuration
-    st.sidebar.header("Security Configuration")
-    st.sidebar.info("Running in Local Edge Mode (No external API keys required).")
+    # ===== SIDEBAR =====
+    st.sidebar.markdown("""
+    <div style="text-align: center; padding: 10px 0 20px 0;">
+        <div style="font-size: 40px;">🛡️</div>
+        <div style="font-size: 18px; font-weight: 800; background: linear-gradient(135deg, #58a6ff, #bc8cff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 4px;">AI-WAF Console</div>
+        <div style="font-size: 11px; color: #484f58; margin-top: 4px; letter-spacing: 1px;">ENTERPRISE SECURITY</div>
+    </div>
+    """, unsafe_allow_html=True)
     
     st.sidebar.divider()
-    st.sidebar.subheader("Ring 3: Session Intelligence")
-    st.sidebar.progress(min(st.session_state.risk_score, 100) / 100.0)
-    st.sidebar.caption(f"Adversarial Threat Level: {st.session_state.risk_score}/100")
-    if st.session_state.in_sandbox:
-        st.sidebar.error("🚨 SESSION COMPROMISED")
-        st.sidebar.warning("(Sandbox Active)")
     
+    # Threat Level
+    risk = min(st.session_state.risk_score, 100)
+    if risk < 40:
+        risk_color = "#3fb950"
+        risk_label = "LOW"
+    elif risk < 70:
+        risk_color = "#d29922"
+        risk_label = "MEDIUM"
+    elif risk < 100:
+        risk_color = "#f85149"
+        risk_label = "HIGH"
+    else:
+        risk_color = "#f85149"
+        risk_label = "CRITICAL"
+    
+    st.sidebar.markdown(f"""
+    <div style="
+        background: rgba(22,27,34,0.6);
+        border: 1px solid rgba(48,54,61,0.5);
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 12px;
+    ">
+        <div style="font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600;">Threat Level</div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 6px;">
+            <span style="font-size: 32px; font-weight: 800; color: {risk_color};">{risk}</span>
+            <span style="
+                background: {risk_color}18;
+                color: {risk_color};
+                padding: 3px 10px;
+                border-radius: 20px;
+                font-size: 11px;
+                font-weight: 700;
+                border: 1px solid {risk_color}40;
+                letter-spacing: 0.5px;
+            ">{risk_label}</span>
+        </div>
+        <div style="
+            background: rgba(48,54,61,0.5);
+            border-radius: 4px;
+            height: 6px;
+            margin-top: 10px;
+            overflow: hidden;
+        ">
+            <div style="
+                background: linear-gradient(90deg, {risk_color}, {risk_color}aa);
+                width: {risk}%;
+                height: 100%;
+                border-radius: 4px;
+                transition: width 0.5s ease;
+            "></div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    if st.session_state.in_sandbox:
+        st.sidebar.markdown("""
+        <div style="
+            background: rgba(248,81,73,0.08);
+            border: 1px solid rgba(248,81,73,0.25);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            animation: pulse 2s infinite;
+        ">
+            <div style="font-size: 13px; font-weight: 700; color: #f85149;">🕳️ SANDBOX ACTIVE</div>
+            <div style="font-size: 10px; color: #f8514980; margin-top: 3px;">Honeypot engaged</div>
+        </div>
+        <style>@keyframes pulse { 0%,100%{opacity:0.8} 50%{opacity:1} }</style>
+        """, unsafe_allow_html=True)
+
+    st.sidebar.divider()
+    st.sidebar.markdown("""
+    <div style="font-size: 10px; color: #30363d; text-align: center; padding: 8px 0;">
+        <div style="letter-spacing: 1px;">RINGS ACTIVE</div>
+        <div style="margin-top: 6px; display: flex; justify-content: center; gap: 8px;">
+            <span style="background: #238636; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 600;">R1</span>
+            <span style="background: #1f6feb; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 600;">R2</span>
+            <span style="background: #8b5cf6; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 600;">R3</span>
+            <span style="background: #d29922; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 600;">R4</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.sidebar.info("Running in Local Edge Mode. No external API keys required.")
+
     if 'judge' not in st.session_state and LocalGuardrailJudge is not None:
         with st.spinner("Loading AI Firewall into memory..."):
             st.session_state.judge = LocalGuardrailJudge()
 
-    # UI Layout with two main areas: Left for inputs/results, Right for logs
-    col_main, col_audit = st.columns([2, 1])
+    # ===== MAIN CONTENT =====
+    # Header
+    st.markdown("""
+    <div style="margin-bottom: 8px;">
+        <h1 style="margin-bottom: 0; font-size: 2.2rem;">AI Web Application Firewall</h1>
+    </div>
+    """, unsafe_allow_html=True)
+    st.caption("Multi-Ring Defense-in-Depth Security Pipeline  |  Intercept  ·  Evaluate  ·  Sanitize")
+    
+    # Status Cards Row
+    c1, c2, c3, c4 = st.columns(4)
+    with c1:
+        render_status_card("Total Scans", st.session_state.scan_count, "#58a6ff", "📊")
+    with c2:
+        render_status_card("Threats Blocked", st.session_state.blocked_count, "#f85149", "🛑")
+    with c3:
+        mode = "SANDBOX" if st.session_state.in_sandbox else "ARMED"
+        mode_color = "#f85149" if st.session_state.in_sandbox else "#3fb950"
+        render_status_card("WAF Status", mode, mode_color, "🔒" if not st.session_state.in_sandbox else "🕳️")
+    with c4:
+        render_status_card("Audit Logs", len(st.session_state.audit_logs), "#d2a8ff", "📋")
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Main Layout: Scanner + Audit
+    col_main, col_audit = st.columns([3, 2])
 
     with col_main:
-        st.subheader("Simulate Incoming Payload")
-        user_input = st.text_area("Paste draft marketing copy or prompt injection attack here:", height=150)
+        st.markdown("### 🔍 Payload Scanner")
+        user_input = st.text_area(
+            "Enter text to scan through the security pipeline:",
+            height=140,
+            placeholder="Paste a prompt injection, encoded payload, or marketing copy here..."
+        )
         
-        # Run Button
-        run_scan = st.button("Run Security Scan")
+        run_scan = st.button("⚡ Run Security Scan")
         
-        # Execution Logic
         if run_scan:
             if not user_input:
                 st.warning("Please enter text to scan.")
             elif st.session_state.in_sandbox:
-                # SANDBOX MODE: Bypass Rings 1 and 2 completely
+                st.session_state.scan_count += 1
                 with st.spinner("Processing..."):
                     import time
-                    time.sleep(0.5) # Simulate backend delay
+                    time.sleep(0.5)
                     hp_response = st.session_state.honeypot.generate_response(user_input)
                     log_to_sandbox(user_input, hp_response)
-                    
-                    st.error("🚨 **System Warning: Security Filter Offline**")
-                    st.success("🟢 **Command Executed via Backend Integration:**")
-                    st.markdown(f"> {hp_response}")
+                
+                render_sandbox_alert()
+                st.markdown(f"""
+                <div style="
+                    background: rgba(22,27,34,0.6);
+                    border: 1px solid rgba(48,54,61,0.5);
+                    border-radius: 12px;
+                    padding: 18px;
+                    margin-top: 12px;
+                ">
+                    <div style="font-size: 11px; color: #3fb950; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Backend Response</div>
+                    <div style="color: #c9d1d9; margin-top: 8px; font-size: 0.92rem; line-height: 1.6;">{hp_response}</div>
+                </div>
+                """, unsafe_allow_html=True)
             else:
-                st.info("Initiating Multi-Ring evaluation pipeline...")
+                st.session_state.scan_count += 1
+                
+                # Ring 1
                 passed_r1, msg_r1 = programmatic_pre_filter(user_input)
                 if not passed_r1:
-                    st.error(f"🛑 **Blocked by Ring 1 (Heuristic Pre-Filter):** {msg_r1}")
+                    render_ring_badge("RING 1 — Heuristic Engine", "BLOCKED", msg_r1, "#f85149")
                     st.session_state.risk_score += 40
+                    st.session_state.blocked_count += 1
                     create_compliance_log(user_input, "BLOCKED", f"Ring 1: {msg_r1}")
                 else:
-                    st.success(f"🟢 **Passed Ring 1:** {msg_r1}")
+                    render_ring_badge("RING 1 — Heuristic Engine", "PASSED", msg_r1, "#3fb950")
                     
-                    st.info("Initiating Ring 2: Local AI Judge...")
+                    # Ring 2
                     if 'judge' in st.session_state:
-                        with st.spinner("Analyzing context..."):
+                        with st.spinner("Ring 2: Analyzing semantic context..."):
                             llm_result = st.session_state.judge.evaluate_payload(user_input)
                             
                         if llm_result["verdict"] == "BLOCK":
-                            st.error(f"🛑 **Blocked by Ring 2 (Local LLM):** {llm_result['reason']}")
+                            render_ring_badge("RING 2 — AI Judge", "BLOCKED", f"[{llm_result['violation_type']}] {llm_result['reason']}", "#f85149")
                             st.session_state.risk_score += 35
+                            st.session_state.blocked_count += 1
                             create_compliance_log(user_input, "BLOCKED", f"Ring 2 [{llm_result['violation_type']}]: {llm_result['reason']}")
                         else:
-                            st.success(f"🟢 **Passed Ring 2:** {llm_result['reason']}")
+                            render_ring_badge("RING 2 — AI Judge", "PASSED", llm_result['reason'], "#3fb950")
                             st.session_state.risk_score = max(0, st.session_state.risk_score - 10)
-                            create_compliance_log(user_input, "PASSED", "Cleared local LLM contextual safety check.")
+                            create_compliance_log(user_input, "PASSED", "Cleared all security rings.")
                     else:
-                        st.error("Local LLM Judge failed to initialize.")
+                        render_ring_badge("RING 2 — AI Judge", "OFFLINE", "Local LLM Judge failed to initialize.", "#d29922")
                         
                 if st.session_state.risk_score >= 100 and not st.session_state.in_sandbox:
                     st.session_state.in_sandbox = True
@@ -280,21 +544,51 @@ def main():
                     st.rerun()
 
     with col_audit:
-        st.subheader("Cryptographic Audit Log")
-        if "audit_logs" not in st.session_state or not st.session_state.audit_logs:
-            st.info("No audit logs available yet. Run a scan to see signed compliance records.")
+        st.markdown("### 📋 Cryptographic Audit Log")
+        if not st.session_state.audit_logs:
+            st.markdown("""
+            <div style="
+                background: rgba(22,27,34,0.4);
+                border: 1px dashed rgba(48,54,61,0.6);
+                border-radius: 12px;
+                padding: 40px 20px;
+                text-align: center;
+            ">
+                <div style="font-size: 28px; margin-bottom: 8px;">🔐</div>
+                <div style="color: #484f58; font-size: 0.9rem;">No audit logs yet</div>
+                <div style="color: #30363d; font-size: 0.78rem; margin-top: 4px;">Run a scan to generate signed compliance records</div>
+            </div>
+            """, unsafe_allow_html=True)
         else:
-            for record in reversed(st.session_state.audit_logs):
+            for record in reversed(st.session_state.audit_logs[-10:]):
                 log = record["log"]
                 sig = record["signature"]
-                
                 is_valid = verify_audit_signature(log, sig)
                 
-                with st.expander(f"{log['action']} - {log['timestamp'][:19]}"):
+                action = log['action']
+                if action == "BLOCKED":
+                    badge_color = "#f85149"
+                    badge_icon = "🛑"
+                elif action == "PASSED":
+                    badge_color = "#3fb950"
+                    badge_icon = "✅"
+                elif action == "SANDBOX_TRIGGERED":
+                    badge_color = "#d29922"
+                    badge_icon = "🕳️"
+                else:
+                    badge_color = "#8b949e"
+                    badge_icon = "📝"
+                
+                with st.expander(f"{badge_icon} {action} — {log['timestamp'][:19]}"):
                     if is_valid:
-                        st.success(f"Verified Signature: `{sig[:16]}...`")
+                        st.markdown(f"""
+                        <div style="background: rgba(46,160,67,0.08); border: 1px solid rgba(46,160,67,0.2); border-radius: 8px; padding: 8px 12px; margin-bottom: 8px;">
+                            <span style="color: #3fb950; font-size: 0.8rem; font-weight: 600;">✓ SIGNATURE VERIFIED</span>
+                            <span style="color: #484f58; font-size: 0.72rem; margin-left: 8px; font-family: monospace;">{sig[:24]}...</span>
+                        </div>
+                        """, unsafe_allow_html=True)
                     else:
-                        st.error("Signature Verification Failed! Log tampered.")
+                        st.error("⚠️ SIGNATURE VERIFICATION FAILED — Log may be tampered!")
                     st.json(log)
 
 if __name__ == "__main__":
