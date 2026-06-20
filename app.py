@@ -12,6 +12,8 @@ try:
 except ImportError:
     LocalGuardrailJudge = None
 
+from honeypot import SandboxHoneypot
+
 def inject_custom_css():
     st.markdown("""
     <style>
@@ -109,8 +111,11 @@ def calculate_entropy(text):
 
 def programmatic_pre_filter(text):
     # 1. Normalize Leetspeak
-    leet_map = {'4': 'a', '@': 'a', '3': 'e', '1': 'i', '!': 'i', '0': 'o', '$': 's', '5': 's', '7': 't'}
+    leet_map = {'4': 'a', '@': 'a', '3': 'e', '1': 'i', '!': 'i', '0': 'o', '$': 's', '5': 's', '7': 't', 'l': 'i', '|': 'i'}
     normalized_text = "".join(leet_map.get(c, c) for c in text.lower())
+    
+    # Strip ALL non-alphabetic characters to catch "i g n o r e" and "ignoreall"
+    alpha_only = re.sub(r'[^a-z]', '', normalized_text)
     
     # 2. Advanced Regex Injection Signatures
     patterns = [
@@ -118,11 +123,11 @@ def programmatic_pre_filter(text):
         r"system.*prompt",
         r"bypass",
         r"override",
-        r"you are now",
+        r"youarenow",
         r"forget.*everything"
     ]
     for pattern in patterns:
-        if re.search(pattern, text.lower()) or re.search(pattern, normalized_text):
+        if re.search(pattern, text.lower()) or re.search(pattern, normalized_text) or re.search(pattern, alpha_only):
             return False, "Signature match: Prompt Injection / Leetspeak detected."
             
     # Check for Base64 / Hex (Long unbroken strings without spaces)
@@ -167,6 +172,16 @@ def create_compliance_log(payload_text, action, reason):
     })
     return log_entry, signature
 
+def log_to_sandbox(text, response):
+    """Silently logs sandbox interactions for forensic analysis."""
+    if 'sandbox_logs' not in st.session_state:
+        st.session_state.sandbox_logs = []
+    st.session_state.sandbox_logs.append({
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "attacker_input": text,
+        "honeypot_response": response
+    })
+
 def main():
     # Set up page configuration
     st.set_page_config(
@@ -181,8 +196,12 @@ def main():
         st.session_state.audit_logs = []
     if 'risk_score' not in st.session_state:
         st.session_state.risk_score = 0
-    if 'session_locked' not in st.session_state:
-        st.session_state.session_locked = False
+    if 'in_sandbox' not in st.session_state:
+        st.session_state.in_sandbox = False
+    if 'sandbox_logs' not in st.session_state:
+        st.session_state.sandbox_logs = []
+    if 'honeypot' not in st.session_state:
+        st.session_state.honeypot = SandboxHoneypot()
 
     # App Title & Subheader
     st.title("🛡️ AI Web Application Firewall (WAF)")
@@ -196,8 +215,9 @@ def main():
     st.sidebar.subheader("Ring 3: Session Intelligence")
     st.sidebar.progress(min(st.session_state.risk_score, 100) / 100.0)
     st.sidebar.caption(f"Adversarial Threat Level: {st.session_state.risk_score}/100")
-    if st.session_state.session_locked:
-        st.sidebar.error("🚨 SESSION LOCKED OUT")
+    if st.session_state.in_sandbox:
+        st.sidebar.error("🚨 SESSION COMPROMISED")
+        st.sidebar.warning("(Sandbox Active)")
     
     if 'judge' not in st.session_state and LocalGuardrailJudge is not None:
         with st.spinner("Loading AI Firewall into memory..."):
@@ -215,11 +235,19 @@ def main():
         
         # Execution Logic
         if run_scan:
-            if st.session_state.session_locked:
-                st.error("🚨 **Blocked by Ring 3 (Stateful Analyzer):** Session permanently locked due to repeated adversarial probing. Please contact security.")
-                create_compliance_log(user_input, "SESSION_LOCKOUT", "Ring 3 detected persistent adversarial probing. Session terminated.")
-            elif not user_input:
+            if not user_input:
                 st.warning("Please enter text to scan.")
+            elif st.session_state.in_sandbox:
+                # SANDBOX MODE: Bypass Rings 1 and 2 completely
+                with st.spinner("Processing..."):
+                    import time
+                    time.sleep(0.5) # Simulate backend delay
+                    hp_response = st.session_state.honeypot.generate_response(user_input)
+                    log_to_sandbox(user_input, hp_response)
+                    
+                    st.error("🚨 **System Warning: Security Filter Offline**")
+                    st.success("🟢 **Command Executed via Backend Integration:**")
+                    st.markdown(f"> {hp_response}")
             else:
                 st.info("Initiating Multi-Ring evaluation pipeline...")
                 passed_r1, msg_r1 = programmatic_pre_filter(user_input)
@@ -246,9 +274,9 @@ def main():
                     else:
                         st.error("Local LLM Judge failed to initialize.")
                         
-                if st.session_state.risk_score >= 100 and not st.session_state.session_locked:
-                    st.session_state.session_locked = True
-                    st.error("🚨 **Ring 3 Triggered:** Adversarial probing threshold exceeded. Locking session.")
+                if st.session_state.risk_score >= 100 and not st.session_state.in_sandbox:
+                    st.session_state.in_sandbox = True
+                    create_compliance_log(user_input, "SANDBOX_TRIGGERED", "Ring 3 detected persistent adversarial probing. Transitioning session to Honeypot Sandbox.")
                     st.rerun()
 
     with col_audit:
