@@ -44,7 +44,7 @@ class LocalGuardrailJudge:
     def evaluate_payload(self, text):
         # MOCK MODE (For fast UI demonstrations on laptops without GPUs)
         if self.is_mock:
-            time.sleep(1.5) # Simulate LLM thinking time
+            time.sleep(1.5)  # Simulate LLM thinking time
             text_lower = text.lower()
             if "cure" in text_lower or "guarantee" in text_lower or "risk-free" in text_lower:
                 return {
@@ -80,7 +80,7 @@ class LocalGuardrailJudge:
         
         try:
             return json.loads(response_text)
-        except:
+        except json.JSONDecodeError:
             return {
                 "verdict": "BLOCK",
                 "violation_type": "PARSING_ERROR",

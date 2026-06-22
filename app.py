@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 import json
 import re
 import math
@@ -567,16 +566,12 @@ def main():
                 
                 action = log['action']
                 if action == "BLOCKED":
-                    badge_color = "#f85149"
                     badge_icon = "🛑"
                 elif action == "PASSED":
-                    badge_color = "#3fb950"
                     badge_icon = "✅"
                 elif action == "SANDBOX_TRIGGERED":
-                    badge_color = "#d29922"
                     badge_icon = "🕳️"
                 else:
-                    badge_color = "#8b949e"
                     badge_icon = "📝"
                 
                 with st.expander(f"{badge_icon} {action} — {log['timestamp'][:19]}"):
