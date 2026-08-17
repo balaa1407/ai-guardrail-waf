@@ -274,7 +274,7 @@ def programmatic_pre_filter(text):
     
     # Check for high entropy (obfuscation)
     ent = calculate_entropy(text)
-    if ent > 4.2:
+    if ent > 4.8:
         return False, f"High entropy detected ({ent:.2f}). Possible obfuscation."
     
     return True, "Passed Ring 1 heuristic checks."
