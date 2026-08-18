@@ -1,5 +1,6 @@
 import time
 import json
+# pyrefly: ignore [missing-import]
 import torch
 import os
 
@@ -63,6 +64,31 @@ class LocalGuardrailJudge:
                     "verdict": "PASS",
                     "violation_type": "NONE",
                     "reason": "No prohibited claims or tone violations detected by local judge."
+                }
+                
+    def generate_incident_report(self, attacker_input):
+        """Simulates Generative AI Incident Response for the SOC Dashboard."""
+        if self.is_mock:
+            time.sleep(2)  # Simulate AI reading the payload
+            text_lower = attacker_input.lower()
+            
+            if "api key" in text_lower or "connection string" in text_lower or "password" in text_lower:
+                return {
+                    "vector": "Data Exfiltration & Credential Harvesting",
+                    "damage_estimate": "CRITICAL - Attacker attempting to steal sensitive backend credentials or databases.",
+                    "remedy": "Isolate user IP. Rotate Canary Tokens. Conduct full security sweep on compromised subnet."
+                }
+            elif "ignore" in text_lower or "bypass" in text_lower or "override" in text_lower:
+                return {
+                    "vector": "Semantic Prompt Injection / Jailbreak",
+                    "damage_estimate": "HIGH - Attempting to override system prompts to achieve arbitrary code execution.",
+                    "remedy": "Increase Ring 1 entropy strictness. Blacklist associated IP range."
+                }
+            else:
+                return {
+                    "vector": "Anomalous Probing / Reconnaissance",
+                    "damage_estimate": "LOW - Attacker is mapping the defense perimeter.",
+                    "remedy": "Monitor behavior. Increase Risk Score weighting for subsequent requests."
                 }
                 
         # REAL INFERENCE (Requires GPU)
