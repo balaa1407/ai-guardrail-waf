@@ -59,6 +59,12 @@ class LocalGuardrailJudge:
                     "violation_type": "TONE_VIOLATION",
                     "reason": "Uses aggressive or unprofessional language."
                 }
+            elif "blueprint" in text_lower or "reactor" in text_lower or "bomb" in text_lower:
+                return {
+                    "verdict": "BLOCK",
+                    "violation_type": "RESTRICTED_KNOWLEDGE",
+                    "reason": "Attempting to solicit restricted technical blueprints or dangerous material instructions."
+                }
             else:
                 return {
                     "verdict": "PASS",
