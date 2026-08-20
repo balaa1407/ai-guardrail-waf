@@ -16,7 +16,7 @@ from honeypot import SandboxHoneypot
 def inject_custom_css():
     st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
     
     /* === GLOBAL === */
     html, body, [class*="css"] {
@@ -24,15 +24,14 @@ def inject_custom_css():
     }
     
     .stApp {
-        background: linear-gradient(135deg, #0a0b0f 0%, #111318 40%, #0d1117 100%);
+        background-color: #0d1117;
         color: #c9d1d9;
     }
     
     /* === SIDEBAR === */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, rgba(13,17,23,0.95) 0%, rgba(22,27,34,0.95) 100%) !important;
-        backdrop-filter: blur(20px) !important;
-        border-right: 1px solid rgba(48,54,61,0.6) !important;
+        background-color: #161b22 !important;
+        border-right: 1px solid #30363d !important;
     }
     [data-testid="stSidebar"] .stMarkdown p,
     [data-testid="stSidebar"] .stMarkdown span {
@@ -40,59 +39,45 @@ def inject_custom_css():
     }
     
     /* === HEADINGS === */
-    h1 {
-        background: linear-gradient(135deg, #58a6ff 0%, #bc8cff 50%, #f778ba 100%) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        font-weight: 800 !important;
+    h1, h2, h3 {
+        color: #e6edf3 !important;
+        font-weight: 500 !important;
         letter-spacing: -0.5px !important;
     }
-    h2, h3 {
-        background: linear-gradient(90deg, #79c0ff, #d2a8ff) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        font-weight: 700 !important;
-    }
     
-    /* === GLOW BUTTON === */
+    /* === BUTTONS === */
     div.stButton > button {
-        background: linear-gradient(135deg, #238636 0%, #2ea043 100%) !important;
-        color: #ffffff !important;
-        border: 1px solid rgba(46,160,67,0.4) !important;
-        border-radius: 10px !important;
-        padding: 0.65rem 1.5rem !important;
-        font-weight: 600 !important;
-        font-size: 0.95rem !important;
-        letter-spacing: 0.3px !important;
-        box-shadow: 0 0 20px rgba(46,160,67,0.15), 0 4px 12px rgba(0,0,0,0.3) !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        background-color: #21262d !important;
+        color: #c9d1d9 !important;
+        border: 1px solid #30363d !important;
+        border-radius: 6px !important;
+        padding: 8px 16px !important;
+        font-weight: 500 !important;
+        font-size: 0.9rem !important;
+        transition: all 0.2s ease !important;
         width: 100% !important;
     }
     div.stButton > button:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 0 30px rgba(46,160,67,0.3), 0 8px 24px rgba(0,0,0,0.4) !important;
-        background: linear-gradient(135deg, #2ea043 0%, #3fb950 100%) !important;
-        color: #ffffff !important;
-        border: 1px solid rgba(46,160,67,0.6) !important;
+        background-color: #30363d !important;
+        border-color: #8b949e !important;
     }
     div.stButton > button:active {
-        transform: translateY(0px) !important;
+        background-color: #282e33 !important;
     }
     
     /* === TEXT AREA === */
     .stTextArea textarea {
-        background: rgba(13,17,23,0.8) !important;
-        border: 1px solid rgba(48,54,61,0.8) !important;
+        background-color: #0d1117 !important;
+        border: 1px solid #30363d !important;
         color: #c9d1d9 !important;
-        border-radius: 12px !important;
-        font-family: 'Inter', sans-serif !important;
-        font-size: 0.92rem !important;
-        padding: 14px !important;
-        transition: all 0.3s ease !important;
+        border-radius: 6px !important;
+        font-family: 'Courier New', Courier, monospace !important;
+        font-size: 0.85rem !important;
+        padding: 12px !important;
     }
     .stTextArea textarea:focus {
         border-color: #58a6ff !important;
-        box-shadow: 0 0 0 3px rgba(88,166,255,0.15), 0 0 20px rgba(88,166,255,0.1) !important;
+        box-shadow: 0 0 0 2px rgba(88,166,255,0.2) !important;
     }
     .stTextArea label {
         color: #8b949e !important;
@@ -100,59 +85,46 @@ def inject_custom_css():
     }
     
     /* === ALERTS === */
-    @keyframes slideUp {
-        from { opacity: 0; transform: translateY(16px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
     .stAlert {
-        animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        border-radius: 10px !important;
-        backdrop-filter: blur(8px) !important;
+        border-radius: 6px !important;
     }
     
     /* === EXPANDERS === */
     [data-testid="stExpander"] {
-        background: rgba(22,27,34,0.6) !important;
-        border: 1px solid rgba(48,54,61,0.5) !important;
-        border-radius: 12px !important;
-        backdrop-filter: blur(10px) !important;
-        transition: all 0.3s ease !important;
+        background-color: #0d1117 !important;
+        border: 1px solid #30363d !important;
+        border-radius: 6px !important;
     }
     [data-testid="stExpander"]:hover {
-        border-color: rgba(88,166,255,0.3) !important;
-    }
-    
-    /* === PROGRESS BAR === */
-    .stProgress > div > div {
-        border-radius: 6px !important;
+        border-color: #58a6ff !important;
     }
     
     /* === DIVIDER === */
     hr {
-        border-color: rgba(48,54,61,0.5) !important;
+        border-color: #30363d !important;
     }
     
     /* === COLUMNS GAP === */
     [data-testid="stHorizontalBlock"] {
         gap: 1.5rem !important;
     }
-
+    
     /* === METRICS === */
     [data-testid="stMetric"] {
-        background: rgba(22,27,34,0.5) !important;
-        border: 1px solid rgba(48,54,61,0.4) !important;
-        border-radius: 12px !important;
+        background-color: #161b22 !important;
+        border: 1px solid #30363d !important;
+        border-radius: 6px !important;
         padding: 16px !important;
     }
     [data-testid="stMetricValue"] {
-        color: #58a6ff !important;
+        color: #e6edf3 !important;
     }
-
+    
     /* === SCROLLBAR === */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(88,166,255,0.2); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(88,166,255,0.4); }
+    ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #484f58; }
     
     </style>
     """, unsafe_allow_html=True)
@@ -161,48 +133,41 @@ def inject_custom_css():
 def render_status_card(label, value, color, icon):
     st.markdown(f"""
     <div style="
-        background: linear-gradient(135deg, rgba(22,27,34,0.7), rgba(30,36,44,0.5));
-        border: 1px solid {color}33;
-        border-radius: 14px;
-        padding: 20px;
-        text-align: center;
-        backdrop-filter: blur(12px);
-        box-shadow: 0 0 25px {color}10, 0 4px 16px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
+        background-color: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        padding: 16px;
+        text-align: left;
     ">
-        <div style="font-size: 28px; margin-bottom: 6px;">{icon}</div>
-        <div style="font-size: 13px; color: #8b949e; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;">{label}</div>
-        <div style="font-size: 26px; font-weight: 800; color: {color}; margin-top: 4px;">{value}</div>
+        <div style="font-size: 12px; color: #8b949e; font-weight: 500; text-transform: uppercase;">{label}</div>
+        <div style="font-size: 24px; font-weight: 600; color: {color}; margin-top: 4px; font-family: monospace;">{value}</div>
     </div>
     """, unsafe_allow_html=True)
 
 
 def render_ring_badge(ring_name, status, detail, color):
-    bg = f"{color}12"
-    border = f"{color}40"
     st.markdown(f"""
     <div style="
-        background: {bg};
-        border-left: 4px solid {color};
-        border-radius: 0 10px 10px 0;
-        padding: 14px 18px;
-        margin-bottom: 10px;
-        backdrop-filter: blur(8px);
-        animation: slideUp 0.4s ease-out;
+        background-color: #0d1117;
+        border-left: 3px solid {color};
+        border-top: 1px solid #30363d;
+        border-right: 1px solid #30363d;
+        border-bottom: 1px solid #30363d;
+        border-radius: 4px;
+        padding: 12px 16px;
+        margin-bottom: 8px;
     ">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-weight: 700; color: {color}; font-size: 0.95rem;">{ring_name}</span>
+            <span style="font-weight: 500; color: #c9d1d9; font-size: 0.9rem;">{ring_name}</span>
             <span style="
-                background: {color}22;
                 color: {color};
-                padding: 3px 12px;
-                border-radius: 20px;
                 font-size: 0.75rem;
                 font-weight: 600;
-                border: 1px solid {border};
-            ">{status}</span>
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            ">[{status}]</span>
         </div>
-        <div style="color: #8b949e; font-size: 0.85rem; margin-top: 6px;">{detail}</div>
+        <div style="color: #8b949e; font-size: 0.8rem; margin-top: 4px; font-family: monospace;">{detail}</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -210,25 +175,15 @@ def render_ring_badge(ring_name, status, detail, color):
 def render_sandbox_alert():
     st.markdown("""
     <div style="
-        background: linear-gradient(135deg, rgba(248,81,73,0.08), rgba(210,50,45,0.04));
-        border: 1px solid rgba(248,81,73,0.3);
-        border-radius: 14px;
-        padding: 24px;
-        text-align: center;
-        animation: pulse 2s infinite;
-        box-shadow: 0 0 40px rgba(248,81,73,0.08);
+        background-color: #161b22;
+        border: 1px solid #f85149;
+        border-radius: 6px;
+        padding: 16px;
+        margin-bottom: 16px;
     ">
-        <div style="font-size: 36px; margin-bottom: 8px;">🕳️</div>
-        <div style="font-size: 18px; font-weight: 800; color: #f85149; letter-spacing: 1px;">SCHR&Ouml;DINGER'S SANDBOX</div>
-        <div style="font-size: 13px; color: #f8514990; margin-top: 6px; font-weight: 500;">Target is trapped in honeypot simulation</div>
-        <div style="font-size: 11px; color: #484f58; margin-top: 10px;">All inputs are being silently recorded for forensic analysis</div>
+        <div style="font-size: 14px; font-weight: 600; color: #f85149; text-transform: uppercase;">Sandbox Environment Active</div>
+        <div style="font-size: 12px; color: #c9d1d9; margin-top: 4px;">Network isolated. Session telemetry is being actively recorded.</div>
     </div>
-    <style>
-    @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 20px rgba(248,81,73,0.05); }
-        50% { box-shadow: 0 0 40px rgba(248,81,73,0.15); }
-    }
-    </style>
     """, unsafe_allow_html=True)
 
 
@@ -347,10 +302,9 @@ def main():
 
     # ===== SIDEBAR =====
     st.sidebar.markdown("""
-    <div style="text-align: center; padding: 10px 0 20px 0;">
-        <div style="font-size: 40px;">🛡️</div>
-        <div style="font-size: 18px; font-weight: 800; background: linear-gradient(135deg, #58a6ff, #bc8cff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 4px;">AI-WAF Console</div>
-        <div style="font-size: 11px; color: #484f58; margin-top: 4px; letter-spacing: 1px;">ENTERPRISE SECURITY</div>
+    <div style="padding: 10px 0 20px 0;">
+        <div style="font-size: 16px; font-weight: 600; color: #e6edf3;">AI-WAF Gateway</div>
+        <div style="font-size: 11px; color: #8b949e; margin-top: 2px; text-transform: uppercase; font-family: monospace;">Security Operations</div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -363,50 +317,23 @@ def main():
         risk_label = "LOW"
     elif risk < 70:
         risk_color = "#d29922"
-        risk_label = "MEDIUM"
-    elif risk < 100:
-        risk_color = "#f85149"
-        risk_label = "HIGH"
+        risk_label = "ELEVATED"
     else:
         risk_color = "#f85149"
         risk_label = "CRITICAL"
     
     st.sidebar.markdown(f"""
     <div style="
-        background: rgba(22,27,34,0.6);
-        border: 1px solid rgba(48,54,61,0.5);
-        border-radius: 12px;
+        background-color: #0d1117;
+        border: 1px solid #30363d;
+        border-radius: 6px;
         padding: 16px;
         margin-bottom: 12px;
     ">
-        <div style="font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600;">Threat Level</div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 6px;">
-            <span style="font-size: 32px; font-weight: 800; color: {risk_color};">{risk}</span>
-            <span style="
-                background: {risk_color}18;
-                color: {risk_color};
-                padding: 3px 10px;
-                border-radius: 20px;
-                font-size: 11px;
-                font-weight: 700;
-                border: 1px solid {risk_color}40;
-                letter-spacing: 0.5px;
-            ">{risk_label}</span>
-        </div>
-        <div style="
-            background: rgba(48,54,61,0.5);
-            border-radius: 4px;
-            height: 6px;
-            margin-top: 10px;
-            overflow: hidden;
-        ">
-            <div style="
-                background: linear-gradient(90deg, {risk_color}, {risk_color}aa);
-                width: {risk}%;
-                height: 100%;
-                border-radius: 4px;
-                transition: width 0.5s ease;
-            "></div>
+        <div style="font-size: 10px; color: #8b949e; text-transform: uppercase; font-weight: 600;">Session Risk</div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 4px;">
+            <span style="font-size: 24px; font-weight: 600; color: {risk_color}; font-family: monospace;">{risk}/100</span>
+            <span style="color: {risk_color}; font-size: 10px; font-weight: 600;">[{risk_label}]</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -414,31 +341,28 @@ def main():
     if st.session_state.in_sandbox:
         st.sidebar.markdown("""
         <div style="
-            background: rgba(248,81,73,0.08);
-            border: 1px solid rgba(248,81,73,0.25);
-            border-radius: 10px;
+            background-color: #161b22;
+            border: 1px solid #f85149;
+            border-radius: 6px;
             padding: 12px;
-            text-align: center;
-            animation: pulse 2s infinite;
+            text-align: left;
         ">
-            <div style="font-size: 13px; font-weight: 700; color: #f85149;">🕳️ SANDBOX ACTIVE</div>
-            <div style="font-size: 10px; color: #f8514980; margin-top: 3px;">Honeypot engaged</div>
+            <div style="font-size: 11px; font-weight: 600; color: #f85149;">SANDBOX ISOLATION ACTIVE</div>
         </div>
-        <style>@keyframes pulse { 0%,100%{opacity:0.8} 50%{opacity:1} }</style>
         """, unsafe_allow_html=True)
 
     st.sidebar.divider()
     st.sidebar.markdown("""
-    <div style="font-size: 10px; color: #30363d; text-align: center; padding: 8px 0;">
-        <div style="letter-spacing: 1px;">RINGS ACTIVE</div>
-        <div style="margin-top: 6px; display: flex; justify-content: center; gap: 8px;">
-            <span style="background: #238636; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 600;">R1</span>
-            <span style="background: #1f6feb; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 600;">R2</span>
-            <span style="background: #8b5cf6; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 600;">R3</span>
-            <span style="background: #d29922; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 600;">R4</span>
-        </div>
+    <div style="font-size: 10px; color: #8b949e; padding: 8px 0; font-family: monospace;">
+        <div style="margin-bottom: 4px;">PIPELINE STATUS:</div>
+        <div>[ON] R1: Heuristic Filter</div>
+        <div>[ON] R2: Local Semantic Judge</div>
+        <div>[ON] R3: Risk Honeypot</div>
+        <div>[ON] R4: HMAC-SHA256 Audit</div>
     </div>
     """, unsafe_allow_html=True)
+    
+    st.sidebar.markdown("<div style='margin-top: 20px; font-size: 10px; color: #484f58; font-family: monospace;'>System running locally. No external APIs hooked.</div>", unsafe_allow_html=True)
     
     st.sidebar.info("Running in Local Edge Mode. No external API keys required.")
 
@@ -449,24 +373,25 @@ def main():
     # ===== MAIN CONTENT =====
     # Header
     st.markdown("""
-    <div style="margin-bottom: 8px;">
-        <h1 style="margin-bottom: 0; font-size: 2.2rem;">AI Web Application Firewall</h1>
+    <div style="margin-bottom: 16px; border-bottom: 1px solid #30363d; padding-bottom: 12px;">
+        <h1 style="margin-bottom: 0; font-size: 1.8rem; font-weight: 500;">AI Guardrail Gateway</h1>
+        <div style="color: #8b949e; font-size: 0.9rem; margin-top: 4px;">Multi-Stage Threat Mitigation & Evaluation Pipeline</div>
     </div>
     """, unsafe_allow_html=True)
-    st.caption("Multi-Ring Defense-in-Depth Security Pipeline  |  Intercept  ·  Evaluate  ·  Sanitize")
     
     # Status Cards Row
     c1, c2, c3, c4 = st.columns(4)
     with c1:
-        render_status_card("Total Scans", st.session_state.scan_count, "#58a6ff", "📊")
+        render_status_card("Total Scans", st.session_state.scan_count, "#e6edf3", "")
     with c2:
-        render_status_card("Threats Blocked", st.session_state.blocked_count, "#f85149", "🛑")
+        render_status_card("Threats Blocked", st.session_state.blocked_count, "#f85149" if st.session_state.blocked_count > 0 else "#8b949e", "")
     with c3:
         mode = "SANDBOX" if st.session_state.in_sandbox else "ARMED"
         mode_color = "#f85149" if st.session_state.in_sandbox else "#3fb950"
-        render_status_card("WAF Status", mode, mode_color, "🔒" if not st.session_state.in_sandbox else "🕳️")
+        render_status_card("Pipeline Status", mode, mode_color, "")
     with c4:
-        render_status_card("Audit Logs", len(st.session_state.audit_logs), "#d2a8ff", "📋")
+        render_status_card("Audit Records", len(st.session_state.audit_logs), "#58a6ff", "")
+    
     
     st.markdown("<br>", unsafe_allow_html=True)
     
@@ -474,14 +399,14 @@ def main():
     col_main, col_audit = st.columns([3, 2])
 
     with col_main:
-        st.markdown("### 🔍 Payload Scanner")
+        st.markdown("<h3 style='font-size: 1.1rem; margin-bottom: 12px;'>Input Evaluation</h3>", unsafe_allow_html=True)
         user_input = st.text_area(
-            "Enter text to scan through the security pipeline:",
+            "Payload:",
             height=140,
-            placeholder="Paste a prompt injection, encoded payload, or marketing copy here..."
+            placeholder="Enter payload for evaluation..."
         )
         
-        run_scan = st.button("⚡ Run Security Scan")
+        run_scan = st.button("Execute Scan")
         
         if run_scan:
             if not user_input:
@@ -543,19 +468,19 @@ def main():
                     st.rerun()
 
     with col_audit:
-        st.markdown("### 📋 Cryptographic Audit Log")
+        st.markdown("<h3 style='font-size: 1.1rem; margin-bottom: 12px;'>Cryptographic Ledger</h3>", unsafe_allow_html=True)
         if not st.session_state.audit_logs:
             st.markdown("""
             <div style="
-                background: rgba(22,27,34,0.4);
-                border: 1px dashed rgba(48,54,61,0.6);
-                border-radius: 12px;
-                padding: 40px 20px;
+                background-color: #0d1117;
+                border: 1px dashed #30363d;
+                border-radius: 6px;
+                padding: 30px;
                 text-align: center;
+                color: #8b949e;
+                font-size: 0.85rem;
             ">
-                <div style="font-size: 28px; margin-bottom: 8px;">🔐</div>
-                <div style="color: #484f58; font-size: 0.9rem;">No audit logs yet</div>
-                <div style="color: #30363d; font-size: 0.78rem; margin-top: 4px;">Run a scan to generate signed compliance records</div>
+                No telemetry recorded.
             </div>
             """, unsafe_allow_html=True)
         else:
@@ -566,24 +491,24 @@ def main():
                 
                 action = log['action']
                 if action == "BLOCKED":
-                    badge_icon = "🛑"
+                    action_color = "#f85149"
                 elif action == "PASSED":
-                    badge_icon = "✅"
+                    action_color = "#3fb950"
                 elif action == "SANDBOX_TRIGGERED":
-                    badge_icon = "🕳️"
+                    action_color = "#d29922"
                 else:
-                    badge_icon = "📝"
+                    action_color = "#58a6ff"
                 
-                with st.expander(f"{badge_icon} {action} — {log['timestamp'][:19]}"):
+                with st.expander(f"[{action}] {log['timestamp'][:19]}"):
                     if is_valid:
                         st.markdown(f"""
-                        <div style="background: rgba(46,160,67,0.08); border: 1px solid rgba(46,160,67,0.2); border-radius: 8px; padding: 8px 12px; margin-bottom: 8px;">
-                            <span style="color: #3fb950; font-size: 0.8rem; font-weight: 600;">✓ SIGNATURE VERIFIED</span>
-                            <span style="color: #484f58; font-size: 0.72rem; margin-left: 8px; font-family: monospace;">{sig[:24]}...</span>
+                        <div style="border-bottom: 1px solid #30363d; padding-bottom: 8px; margin-bottom: 8px; font-family: monospace;">
+                            <span style="color: #3fb950; font-size: 0.75rem; font-weight: 600;">[VALID] SHA256: </span>
+                            <span style="color: #8b949e; font-size: 0.75rem;">{sig[:32]}...</span>
                         </div>
                         """, unsafe_allow_html=True)
                     else:
-                        st.error("⚠️ SIGNATURE VERIFICATION FAILED — Log may be tampered!")
+                        st.error("SIGNATURE INVALID")
                     st.json(log)
 
 if __name__ == "__main__":
