@@ -154,9 +154,20 @@ with col_incident:
         
         if st.button("Initiate Traceback & Isolate"):
             with st.spinner("Tracing IP..."):
-                time.sleep(2)
-                fake_ips = ["194.55.23.11 (Eastern Europe)", "45.22.19.8 (Unknown Proxy)", "112.90.3.4 (Data Center Node)"]
-                trace = random.choice(fake_ips)
+                import urllib.request
+                import json
+                try:
+                    # Get real public IP
+                    ip = urllib.request.urlopen('https://api.ipify.org').read().decode('utf8')
+                    # Get location data
+                    loc_url = f"http://ip-api.com/json/{ip}"
+                    req = urllib.request.Request(loc_url, headers={'User-Agent': 'Mozilla/5.0'})
+                    with urllib.request.urlopen(req, timeout=3) as response:
+                        data = json.loads(response.read().decode('utf8'))
+                        location = f"{data.get('city', 'Unknown City')}, {data.get('country', 'Unknown Country')}"
+                    trace = f"{ip} ({location})"
+                except Exception:
+                    trace = "127.0.0.1 (Localhost / Fallback)"
                 
             st.markdown(f"""
             <div style='background-color: rgba(248,81,73,0.1); border: 1px solid #f85149; border-radius: 6px; padding: 16px; margin-top: 16px;'>
